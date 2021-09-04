@@ -1,28 +1,47 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://js.arcgis.com/3.37/esri/css/esri.css">
+    <link rel="stylesheet" href="https://js.arcgis.com/3.37/dijit/themes/claro/claro.css">
+    <script src="https://js.arcgis.com/3.37/"></script>
+    <script>
+      var map;
+      require(["esri/map"], function(Map) {
+        map = new Map("map", {
+          basemap: "topo",
+          center: [-122.45, 37.75],
+          zoom: 13
+        });
+      });
+    </script>
+    <style>
+      html, body, #map {
+        height: 100%;
+        padding: 0;
+        margin: 0;
+      }
+    </style>
   </head>
-  <body>
+  <body class="claro">
     <h1><%= title %></h1>
     <section>
       <form class="form" action="">
         <div class="container">
           <label for="">Nombre</label>
-          <input type="Nombre" placeholder="ej:Av. E. Madero 1020">
+          <input type="text" placeholder="ej:Av. E. Madero 1020">
         </div>  
         <div class="container">
           <label for="">Direccion</label>
-          <input type="Direccion" placeholder="ej:Av. E. Madero 1020">
+          <input type="text" placeholder="ej:Av. E. Madero 1020">
         </div>
         <div class="container">
           <label for="">Telefóno</label>
-          <input type="Telefono" placeholder="ej: 54 9 11 5272 0900">
+          <input type="tel" placeholder="ej: 54 9 11 5272 0900">
         </div>
         <div class="container">
           <label for="">Categoría</label>
@@ -34,7 +53,7 @@
         <div class="container">
           <label for="">Coord.</label>
           <div class="div_inp">
-            <input class="input_b" type="Coord." placeholder="ej:Av. E. Madero 1020">
+            <input class="input_b" type="number" placeholder="ej:Av. E. Madero 1020">
             <i class="fas fa-globe-americas"></i>
           </div>                 
         </div>
@@ -42,6 +61,7 @@
           <button>Agregar</button>
         </div>      
       </form>
-    </section>    
+    </section>
+    <div id="map"></div>    
   </body>
 </html>
