@@ -1,0 +1,101 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  padding: 10px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+h1 {
+  font-size: 1.5em;
+  text-align: center;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+}
+
+.form {
+  display: flex;
+  padding: 20px;
+  margin: 20px;
+  font-size: 1.5em;
+  flex-direction: column;
+  background-color: lightgray;
+  border-radius: 5px;
+  border-color: black;
+}
+
+.container {
+  display: flex;
+  padding: 3px 10px;
+  justify-content: space-between ;
+}
+
+div label {
+  margin: 0 20px;
+  align-self: center;  
+}
+
+div input {
+  padding: 10px;
+  border-radius: 5px;
+  border-color: blue;
+  border-width: 1px;
+}
+
+.div_inp {
+  display: flex;
+}
+
+.input_a {
+  border-radius: 5px 0 0 5px;
+  width: 137px;
+  padding: 10px;
+}
+
+.input_b {
+  border-radius: 5px 0 0 5px;
+  width: 124px;
+  padding: 10px;
+}
+
+i {
+  color: white;
+  padding: 0 4px;
+  border-radius: 0 5px 5px 0;
+  border-color: blue;
+  border-width: 1px;
+  background-color: #2a66a3;
+  font-size: 38px;
+
+}
+
+select {
+  display: flex;
+  flex-grow: 1;
+  border-radius: 5px;
+  border-width: 1px;
+  padding: 10px;
+  border-color: blue;
+}
+
+.item_button {
+  display: flex;
+  justify-content: end;
+  padding: 10px 10px
+}
+
+button {
+  display: flex;
+  padding: 5px 20px;
+  justify-content: center;
+  color: white;
+  background-color: #28B463;
+  border-radius: 5px;
+  border-color: black;
+  border-width: 1px;
+}
