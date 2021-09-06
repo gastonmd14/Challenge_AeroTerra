@@ -6,62 +6,47 @@
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://js.arcgis.com/3.37/esri/css/esri.css">
-    <link rel="stylesheet" href="https://js.arcgis.com/3.37/dijit/themes/claro/claro.css">
-    <script src="https://js.arcgis.com/3.37/"></script>
-    <script>
-      var map;
-      require(["esri/map"], function(Map) {
-        map = new Map("map", {
-          basemap: "topo",
-          center: [-122.45, 37.75],
-          zoom: 13
-        });
-      });
-    </script>
-    <style>
-      html, body, #map {
-        height: 100%;
-        padding: 0;
-        margin: 0;
-      }
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+    <script src="/javascripts/leaflet.js" defer></script>
   </head>
   <body class="claro">
     <h1><%= title %></h1>
     <section>
-      <form class="form" action="">
+      <form class="form" action="/" method="POST">
         <div class="container">
-          <label for="">Nombre</label>
-          <input type="text" placeholder="ej:Av. E. Madero 1020">
+          <label for="">Descripcion</label>
+          <input type="text" name="description" id="description" placeholder="ej: AEROTERRA S.A.">
         </div>  
         <div class="container">
           <label for="">Direccion</label>
-          <input type="text" placeholder="ej:Av. E. Madero 1020">
+          <input type="text" name="address" id="address" placeholder="ej: Av. Eduardo Madero 1020, C1001 CABA">
         </div>
         <div class="container">
           <label for="">Telefóno</label>
-          <input type="tel" placeholder="ej: 54 9 11 5272 0900">
+          <input type="tel" name="telephone" id="telephone" placeholder="ej: 54 9 11 5272 0900">
         </div>
         <div class="container">
           <label for="">Categoría</label>
-          <div class="div_inp">
-            <input class="input_a" type="text" placeholder="Seleccionar">
-            <i class="fas fa-caret-down"></i>
-          </div>
+          <select name="category" id="category">
+            <option value="">Seleccionar</option>
+            <option value="Comercial">Comercial</option>
+            <option value="Residensial">Residencial</option>
+            <option value="Mixta">Mixta</option>
+          </select>
         </div>
         <div class="container">
           <label for="">Coord.</label>
-          <div class="div_inp">
-            <input class="input_b" type="number" placeholder="ej:Av. E. Madero 1020">
-            <i class="fas fa-globe-americas"></i>
-          </div>                 
+          <div>
+            <input type="text" name="coordinates" id="coordinates" placeholder="ej: 34.595986, 58.3724715">
+            <p class="text-red">Coordenadas Fuera de Rango</p>
+          </div>          
         </div>
         <div class="item_button">
-          <button>Agregar</button>
+          <button type="submit">Agregar</button>
         </div>      
       </form>
-    </section>
-    <div id="map"></div>    
+    </section>  
+    <div id="mapid"></div>
   </body>
 </html>
