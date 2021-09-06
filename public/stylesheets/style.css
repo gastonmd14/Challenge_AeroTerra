@@ -76,7 +76,7 @@ i {
 
 select {
   display: flex;
-  flex-grow: 1;
+  flex-grow: 0.82;
   border-radius: 5px;
   border-width: 1px;
   padding: 10px;
@@ -99,3 +99,16 @@ button {
   border-color: black;
   border-width: 1px;
 }
+
+.text-red {
+  display: none;
+  color: red;
+  font-size: 0.5em;
+  padding: 5px 0 0 0;
+}
+
+.display {
+  display: block;
+}
+
+#mapid { height: 600px; }
